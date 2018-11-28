@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Characters/Character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Characters/Players/Armatures/Armature-M.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/Camera.gd" type="Script" id=4]
+
+[node name="Player" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance" parent="." index="0"]
+visible = false
+
+[node name="Armature" parent="." index="2" instance=ExtResource( 3 )]
+transform = Transform( 0.25, 0, 0, 0, -1.09278e-008, -0.25, 0, 0.25, -1.09278e-008, 0, 0, 0 )
+
+[node name="AnimationTreePlayer" parent="Armature" index="2"]
+data = {
+"active": true,
+"connections": [ "Move", "out", 0, "IdleAnim", "Move", 0, "RunAnim", "Move", 1 ],
+"master": NodePath("../AnimationPlayer"),
+"nodes": [ {
+"id": "out",
+"position": Vector2( 607, 164 ),
+"type": "output"
+}, {
+"filter": [  ],
+"from": "Idle",
+"id": "IdleAnim",
+"position": Vector2( 279, 84 ),
+"type": "animation"
+}, {
+"filter": [  ],
+"from": "Run",
+"id": "RunAnim",
+"position": Vector2( 281, 200 ),
+"type": "animation"
+}, {
+"blend": 0.0,
+"filter": [  ],
+"id": "Move",
+"position": Vector2( 433, 139 ),
+"type": "blend2"
+} ]
+}
+
+[node name="Camera" type="Camera" parent="." index="3"]
+transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, 0, 2, -4 )
+keep_aspect = 1
+cull_mask = 1048575
+environment = null
+h_offset = 0.0
+v_offset = 0.0
+doppler_tracking = 0
+projection = 0
+current = false
+fov = 70.0
+size = 1.0
+near = 0.05
+far = 100.0
+script = ExtResource( 4 )
+mouse_sensitvity = 1200
+
+
+[editable path="Armature"]
