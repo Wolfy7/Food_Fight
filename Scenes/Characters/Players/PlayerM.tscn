@@ -31,17 +31,17 @@ data = {
 "position": Vector2( 279, 84 ),
 "type": "animation"
 }, {
-"filter": [  ],
-"from": "Run",
-"id": "RunAnim",
-"position": Vector2( 281, 200 ),
-"type": "animation"
-}, {
 "blend": 0.0,
 "filter": [  ],
 "id": "Move",
 "position": Vector2( 433, 139 ),
 "type": "blend2"
+}, {
+"filter": [  ],
+"from": "Run",
+"id": "RunAnim",
+"position": Vector2( 281, 200 ),
+"type": "animation"
 } ]
 }
 
@@ -52,9 +52,9 @@ cull_mask = 1048575
 environment = null
 h_offset = 0.0
 v_offset = 0.0
-doppler_tracking = 0
+doppler_tracking = 2
 projection = 0
-current = false
+current = true
 fov = 70.0
 size = 1.0
 near = 0.05

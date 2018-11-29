@@ -1,4 +1,4 @@
-extends KinematicBody
+extends "res://Scripts/Character.gd"
 
 
 # movement variables
@@ -102,3 +102,20 @@ func get_2d_movement():
 		facing_direction = PI * 1.5
 	
 	return movement_vector.normalized()
+	
+	
+	
+func _input(event):
+	if Input.is_action_just_pressed("fire"):
+		fire()
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
